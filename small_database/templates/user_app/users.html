@@ -16,9 +16,35 @@
     </header>
 
     <main>
+        <h2>Your DATAGIO database:</h2>
+        {% if users %}
+
+        <table>
+
+            <thead>
+                <th>Name:</th>
+                <th>Email:</th>
+                <th>Age:</th>
+                <th>ID:</th>
+
+            </thead>
+            {% for person in users %}
+            <tbody>
+                <tr>
+                    <td>{{ person.user_name}}</td>
+                    <td>{{ person.email }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>{{ person.user_id }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+
+        </table>
+        {% endif %}
 
     </main>
 
     <button><a href="{% url 'index' %}">Home⤊</a></button>
+    <span> <p></p></span>
 </body>
 </html></html>

@@ -20,6 +20,24 @@ margin: 3rem 0;
 color: #3b3c3d;
 }
 
+table{
+margin: 0 auto; /* Horizontal centering */
+text-align: center;
+}
+
+thead{
+background: #a6aaba;
+}
+
+th{
+padding: 0.5rem 1rem;
+}
+
+td{
+padding: 0.6rem 1rem;
+border: 2px solid #dcdfe8;
+}
+
 button{
 border:none;
 color: #fcfaf5;
@@ -34,4 +52,8 @@ background:#748be8;
 a{
 text-decoration:none;
 color: #fcfaf5;
+}
+
+span p{
+margin: 5em 0;
 }
