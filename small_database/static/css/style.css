@@ -1,0 +1,36 @@
+*{
+font-family: Verdana;
+text-align: center;
+}
+
+body{
+margin: 0;
+padding: 0;
+}
+
+header{
+margin: 0;
+padding: 1em 0 ;
+background: #566dcc;
+color: #fcfaf5;
+}
+
+main{
+margin: 1rem 0;
+}
+
+button{
+border:none;
+color: #fcfaf5;
+background:#566dcc;
+border-radius: 55px;
+padding: 1em 1.5em;
+}
+button:hover{
+background:#748be8;
+}
+
+a{
+text-decoration:none;
+color: #fcfaf5;
+}
