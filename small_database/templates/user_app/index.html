@@ -1,15 +1,5 @@
-<!doctype html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
-    <title>User database</title>
-</head>
-<body>
+{% extends 'user_app/base.html' %}
+
     <header>
         <h1>DATAGIO ıllı</h1>
         <h3><em>Database of your precious users</em></h3>
@@ -27,5 +17,3 @@
     </main>
 
     <button><a href="{% url 'user' %}">See my database</a></button>
-</body>
-</html>
