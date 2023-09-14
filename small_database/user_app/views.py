@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from user_app.models import User
+from user_app.forms import UserForm, UserProfileInfoForm
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate,login,logout
+
 
 # Create your views here.
 

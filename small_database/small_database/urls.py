@@ -21,5 +21,7 @@ from user_app import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('user/', include('user_app.urls'))
+    path('user/', include('user_app.urls')),
+    path('special/', views.special, name='special')
 ]
+# add logout here
