@@ -1,5 +1,7 @@
 {% extends 'user_app/base.html' %}
 
+
+{% block body_block %}
     <main>
         <h2>Your DATAGIO database:</h2>
         {% if users %}
@@ -30,3 +32,4 @@
     </main>
 
     <button><a href="{% url 'index' %}">Home⤊</a></button>
+{% endblock %}

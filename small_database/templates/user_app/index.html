@@ -1,11 +1,6 @@
 {% extends 'user_app/base.html' %}
 
-    <header>
-        <h1>DATAGIO ıllı</h1>
-        <h3><em>Database of your precious users</em></h3>
-        <a href="{% url 'admin:index' %}" class="admin_link">✐ Admin </a>
-    </header>
-
+{% block body_block %}
 
     <main>
         <section>
@@ -17,3 +12,5 @@
     </main>
 
     <button><a href="{% url 'user' %}">See my database</a></button>
+
+{% endblock %}
