@@ -1,0 +1,26 @@
+{% extends 'user_app/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+    {% if registered %}
+        <h1>Registration complete, please login.</h1>
+    {% else %}
+        <h1>Registration Form</h1>
+        <form enctype="multipart/form-data" method="post" >
+            {% csrf_token %}
+
+            {{ user_form.as_p }}
+
+            {{ profile_form.as_p }}
+                <!--views.py-->
+
+            <input type="submit" value="Finnish registration">
+
+        </form>
+
+
+    {% endif %}
+
+
+{% endblock %}
