@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from user_app.forms import UserForm, UserProfileInfoForm
+from django.views.generic import TemplateView
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,6 +12,10 @@ from django.contrib.auth import authenticate,login,logout
 
 def index(request):
     return render(request, 'user_app/index.html')
+
+
+class SpecialView(TemplateView):
+    template_name = 'basic_app/special.html'
 
 
 def user(request):
