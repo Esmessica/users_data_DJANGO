@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from user_app.forms import UserForm, UserProfileInfoForm
+from . import models
 from django.views.generic import TemplateView
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate,login,logout
+from django.views.generic import DetailView
 
 
 # Create your views here.
@@ -83,6 +85,12 @@ def user_login(request):
     else:
 
         return render(request, 'user_app/login.html')
+
+
+class UsersDataDetailView(DetailView):
+    context_object_name = 'users_data'
+    model = models.UserProfileInfo
+    template_name = 'user_app/users.html'
 
 # def user(request):
 #     user_list = User.objects.order_by('user_id')

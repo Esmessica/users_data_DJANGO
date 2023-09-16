@@ -11,7 +11,11 @@
         </section>
 
     </main>
+    {% if user.is_authenticated %}
+        <button><a href="{% url 'user_app:user_detail' user_data.user.pk %}">See my database</a></button>
 
-    <button><a href="#">See my database</a></button>
+    {% else %}
+        <button disabled><a href="#">Login to see data</a></button>
+    {% endif %}
 
 {% endblock %}

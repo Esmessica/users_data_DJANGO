@@ -5,7 +5,7 @@
     <!-- NEEDS TO BE EDITED TO NEW DATABASE INFO -->
     <main>
         <h2>Your DATAGIO database:</h2>
-        {% if users %}
+        {% if users_data %}
 
         <table>
 
@@ -15,7 +15,7 @@
                 <th>ID:</th>
 
             </thead>
-            {% for person in users %}
+            {% for person in users_data %}
             <tbody>
                 <tr>
                     <td>{{ person.user_name}}</td>
