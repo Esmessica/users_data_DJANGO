@@ -15,20 +15,20 @@
 
 <body>
     <header>
-        <h1>DATAGIO ıllı </h1>
+        <a href="{% url 'index' %}"><h1>DATAGIO ıllı </h1></a>
         <h3><em>Database of your precious users</em></h3>
         <a href="{% url 'admin:index' %}" class="admin_link">✐ Admin </a>
-        <a href="{% url 'user_app:register' %}">Register</a>             <!-- def register in views.py -->
+        <a class="user_task" href="{% url 'user_app:register' %}">Register</a>             <!-- def register in views.py -->
 
 
         <!--checks if user is loged or not-->
         {% if user.is_authenticated %}
 
-            <a href="{% url 'logout' %}">Logour</a>
+            <a class="user_task" href="{% url 'logout' %}">Logout</a>
 
         {% else %}
 
-        <a href="{% url 'user_app:user_login' %}">Login</a>
+        <a class="user_task" href="{% url 'user_app:user_login' %}">Login</a>
             <!--def user_login in views.py-->
         {% endif %}
 

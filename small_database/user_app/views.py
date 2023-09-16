@@ -13,10 +13,11 @@ from django.contrib.auth import authenticate,login,logout
 def index(request):
     return render(request, 'user_app/index.html')
 
+
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse)
+    return HttpResponseRedirect(reverse('index'))
 
 
 class SpecialView(TemplateView):
@@ -51,8 +52,9 @@ def register(request):
         user_form = UserForm()
         profile_form = UserProfileInfoForm()
 
-    return render(request, 'user_app/registration.html',{'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
+    return render(request, 'user_app/registration.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
     #    those files in commas are from the registered.html, they usually match with variable name sin this file
+
 
 def user_login(request):
 

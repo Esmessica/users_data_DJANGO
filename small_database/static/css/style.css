@@ -69,3 +69,10 @@ a{
 span p{
     margin: 5em 0;
 }
+
+.user_task{
+padding: 2rem;
+}
+.user_task:hover{
+color: #d1d1de;
+}
