@@ -19,7 +19,6 @@ def user_logout(request):
     return HttpResponseRedirect(reverse)
 
 
-@login_required
 class SpecialView(TemplateView):
     template_name = 'basic_app/special.html'
 
@@ -72,12 +71,12 @@ def user_login(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse('index'))
             else:
-
-                return render(request,'user_app/errno.html')
+                invalid_info = "Account not active!"
+                return render(request,'user_app/errno.html', context=invalid_info)
 
         else:
             print(f'Login of {username} has failed due to invalid login details')
-            return render(request, 'user_app/errno.html')
+            return render(request, 'user_app/errno.html', context=invalid_info)
 
     else:
 
@@ -87,4 +86,4 @@ def user_login(request):
 #     user_list = User.objects.order_by('user_id')
 #     user_dict = {'users': user_list}
 #     return render(request, 'user_app/users.html', context=user_dict)
-#
+

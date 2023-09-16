@@ -8,11 +8,11 @@ class UserForm(forms.ModelForm):
 
     class Meta():
         model = User
-        fields = ('username', 'email', 'password', 'age')
+        fields = ('username', 'email', 'password')
 
 
 class UserProfileInfoForm(forms.ModelForm):
-    class Meta():
 
+    class Meta():
         model = UserProfileInfo
         fields = ('personal_site', 'profile_pic')

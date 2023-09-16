@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('user/', include('user_app.urls')),
-    path('special/', views.SpecialView.as_view(), name='special')
+    path('special/', views.SpecialView.as_view, name='special'),
+    path('logout/', views.user_logout, name='logout')
 ]
 # add logout here
