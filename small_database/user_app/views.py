@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from user_app.forms import UserForm, UserProfileInfoForm
 from . import models
+from user_app.models import UserProfileInfo
 from django.views.generic import TemplateView, DetailView
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -94,9 +95,10 @@ class UsersDataDetailView(DetailView):
 
 
 def users_data(request):
+    # Fetch all instances of UserProfileInfo
+    user_profiles = UserProfileInfo.objects.all()
 
-    user_profiles = models.UserProfileInfo.objects.all()
-
+    # Pass the user_profiles to the template for rendering
     return render(request, 'user_app/userprofileinfo_list.html', {'UserProfileInfo': user_profiles})
 
 # def user(request):
