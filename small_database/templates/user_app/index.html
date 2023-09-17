@@ -15,7 +15,7 @@
         <button><a href="{% url 'user_app:users_data'%}">See my database</a></button>
 
     {% else %}
-        <button><a href="{% url 'user_app:users_data' %}">Login to see data</a></button>
+        <button><a href="{% url 'user_app:user_login' %}">Login to see data</a></button>
     {% endif %}
 
 {% endblock %}
