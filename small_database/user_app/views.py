@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from user_app.forms import UserForm, UserProfileInfoForm
 from . import models
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -87,9 +87,17 @@ def user_login(request):
         return render(request, 'user_app/login.html')
 
 
-class UsersDataDetailView(ListView):
-    context_object_name = 'users_data'
+class UsersDataDetailView(DetailView):
+    context_object_name = 'users_detail'
     model = models.UserProfileInfo
+    template_name = 'user_app/userprofileinfo_list.html'
+
+
+def users_data(request):
+
+    user_profiles = models.UserProfileInfo.objects.all()
+
+    return render(request, 'user_app/userprofileinfo_list.html', {'UserProfileInfo': user_profiles})
 
 # def user(request):
 #     user_list = User.objects.order_by('user_id')
