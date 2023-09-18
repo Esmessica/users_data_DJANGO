@@ -102,10 +102,6 @@ def users_data(request):
     return render(request, 'user_app/userprofileinfo_list.html', {'UserProfileInfo': user_profiles})
 
 
-class UserCreateView(CreateView):
-    fields = ('username', 'email', 'password', 'personal_site')
-    model = models.UserProfileInfo
-
 
 class UserDeleteView(DeleteView):
     model = models.UserProfileInfo

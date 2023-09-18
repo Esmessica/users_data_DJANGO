@@ -47,6 +47,10 @@ button{
     padding: 1em 1.5em;
 }
 
+.gapper{
+    margin: 2rem;
+}
+
 button:hover{
     background:#748be8;
 }
