@@ -2,8 +2,8 @@ from django.shortcuts import render
 from user_app.forms import UserForm, UserProfileInfoForm
 from . import models
 from user_app.models import UserProfileInfo
-from django.views.generic import TemplateView, DetailView
-from django.urls import reverse
+from django.views.generic import TemplateView, DetailView, DeleteView, CreateView, UpdateView
+from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate,login,logout
@@ -100,6 +100,23 @@ def users_data(request):
 
     # Pass the user_profiles to the template for rendering
     return render(request, 'user_app/userprofileinfo_list.html', {'UserProfileInfo': user_profiles})
+
+
+class UserCreateView(CreateView):
+    fields = ('username', 'email', 'password', 'personal_site')
+    model = models.UserProfileInfo
+
+
+class UserDeleteView(DeleteView):
+    model = models.UserProfileInfo
+    success_url = reverse_lazy('index')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['username'] = self.object.user.username  # Pass the username to the template
+        return context
+
+
 
 # def user(request):
 #     user_list = User.objects.order_by('user_id')
