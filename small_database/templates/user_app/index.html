@@ -12,6 +12,7 @@
 
     </main>
     {% if user.is_authenticated %}
+
         <button><a href="{% url 'user_app:users_data' %}">See my database</a></button>
 
     {% else %}

@@ -71,8 +71,13 @@ span p{
 }
 
 .user_task{
-padding: 2rem;
+    padding: 2rem;
 }
+
 .user_task:hover{
-color: #d1d1de;
+    color: #d1d1de;
+}
+
+.home_btn{
+    padding: 4rem 0;
 }
