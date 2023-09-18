@@ -10,6 +10,7 @@
                 <th>Name:</th>
                 <th>Email:</th>
                 <th>ID:</th>
+                <th>Options:</th>
             </tr>
         </thead>
         <tbody>
@@ -18,11 +19,12 @@
                 <td>{{ person.user.username }}</td>
                 <td>{{ person.user.email }}</td>
                 <td>{{ person.user_id }}</td>
+                <td> <a class="btn btn-danger" href="{% url 'user_app:delete' pk=person.pk %}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </main>
 
-<button><a class="home_btn" href="{% url 'index' %}">Home⤊</a></button>
+<button ><a class="home_btn" href="{% url 'index' %}">Home⤊</a></button>
 {% endblock %}

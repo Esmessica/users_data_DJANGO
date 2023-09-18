@@ -19,14 +19,14 @@
     <header>
         <a class="text-white text-decoration-none" href="{% url 'index' %}"><h1>DATAGIO ıllı </h1></a>
         <h3><em>Database of your precious users</em></h3>
-        <a class="text-white text-decoration-none" href="{% url 'admin:index' %}" class="admin_link">✐ Admin </a>
-        <a  class="user_task text-white text-decoration-none" href="{% url 'user_app:register' %}">Register</a>             <!-- def register in views.py -->
+        <a class="text-white text-decoration-none hover-effect admin_link" href="{% url 'admin:index' %}" >✐ Admin </a>
+        <a  class="user_task text-white text-white text-decoration-none hover-effect" href="{% url 'user_app:register' %}">Register</a>             <!-- def register in views.py -->
 
 
         <!--checks if user is loged or not-->
         {% if user.is_authenticated %}
 
-            <a class="user_task text-white text-decoration-none" href="{% url 'logout' %}">Logout</a>
+            <a class="user_task text-white text-decoration-none hover-effect" href="{% url 'logout' %}">Logout</a>
 
         {% else %}
 

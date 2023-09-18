@@ -43,9 +43,10 @@ button{
     border:none;
     color: #fcfaf5;
     background:#566dcc;
-    border-radius: 55px;
+    border-radius: 55px 55px 55px 55px !important;
     padding: 1em 1.5em;
 }
+
 button:hover{
     background:#748be8;
 }
@@ -60,6 +61,13 @@ button:hover{
 .admin_link:hover{
     color: #d1d1de;
 }
+
+button a{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fcfaf5;
+}
+
 
 a{
     font-size: 1.2rem;
@@ -81,4 +89,8 @@ span p{
 
 .home_btn{
     padding: 4rem 0;
+}
+
+.hover-effect:hover {
+    color: #d1d1de !important;
 }

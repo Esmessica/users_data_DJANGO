@@ -109,12 +109,19 @@ class UserCreateView(CreateView):
 
 class UserDeleteView(DeleteView):
     model = models.UserProfileInfo
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('user_app:users_data')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['username'] = self.object.user.username  # Pass the username to the template
         return context
+
+    def users_data(request):
+        # Fetch all instances of UserProfileInfo
+        user_profiles = UserProfileInfo.objects.all()
+
+        # Pass the user_profiles to the template for rendering
+        return render(request, 'user_app/userprofileinfo_list.html', {'UserProfileInfo': user_profiles})
 
 
 
